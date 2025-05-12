@@ -11,8 +11,9 @@ int max(int a, int b) {
     return (a > b) ? a : b;
 }
 
-// Implementación recursiva pura, sin almacenamiento intermedio
-// Esta versión presenta una complejidad exponencial de O(2^n), como se muestra en [5]
+// Implementación recursiva pura sin almacenamiento intermedio
+// Referencia directa a [5] BaseMax: estructura básica del algoritmo de mochila
+// Esta versión presenta una complejidad exponencial O(2^n), lo cual demuestra la ineficiencia de resolver el problema sin PD
 int mochilaRecursiva(int horas[], int beneficios[], int n, int tiempoDisponible) {
     if (n == 0 || tiempoDisponible == 0)
         return 0;
@@ -48,7 +49,7 @@ int main() {
     printf("¿Cuántas horas en total tienes disponibles para estudiar? ");
     scanf("%d", &tiempoDisponible);
 
-    // Llamado a la versión recursiva sin PD
+    // Llamado a la versión recursiva sin PD (referencia [5])
     int resultado = mochilaRecursiva(horas, beneficios, n, tiempoDisponible);
     printf("\nEl beneficio máximo posible es: %d\n", resultado);
 
